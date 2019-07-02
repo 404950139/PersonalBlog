@@ -25,6 +25,6 @@ app.get("/queryTagIdByTag", loader.get("queryTagIdByTag"));
 // 设置静态文件位置
 app.use(express.static("./page/"));
 
-app.listen(8080, function () {
+app.listen(2001, function () {
     console.log("服务器已启动");
 });
