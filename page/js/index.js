@@ -1,3 +1,4 @@
+// 每日一句
 var everyDay = new Vue({
     el: '#every_day',
     data: {
@@ -15,6 +16,7 @@ var everyDay = new Vue({
     }
 });
 
+// 文章列表
 var articleList = new Vue({
     el: '#article_list',
     data: {
@@ -68,6 +70,7 @@ var articleList = new Vue({
                 this.generatePageTool;
             }
         },
+        // 翻页
         generatePageTool: function () {
             var nowPage = this.page;
             var pageSize = this.pageSize;

@@ -1,3 +1,4 @@
+// 发送评论
 var sendComment = new Vue({
     el: "#send_comment",
     data: {
@@ -19,7 +20,7 @@ var sendComment = new Vue({
                 var name = document.getElementById("comment_name").value;
                 var email = document.getElementById("comment_email").value;
                 var content = document.getElementById("comment_content").value;
-
+                // 添加到数据库
                 axios({
                     method: "get",
                     url: "/addComment?bid=" + bid + "&parent=" + reply + "&userName=" + name + "&email=" + email + "&content=" + content + "&reply_name=" + reply_name,
@@ -30,6 +31,7 @@ var sendComment = new Vue({
                 })
             }
         },
+        // 修改验证码
         changeCode: function () {
             return function () {
                 axios({
@@ -49,7 +51,7 @@ var sendComment = new Vue({
     }
 });
 
-
+// 博客评论
 var blogComments = new Vue({
     el: "#blog_comments",
     data: {

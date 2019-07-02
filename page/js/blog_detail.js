@@ -1,3 +1,4 @@
+// 博客详情
 var blogDetail = new Vue({
     el: "#blog_detail",
     data: {
@@ -41,7 +42,7 @@ var blogDetail = new Vue({
     }
 });
 
-
+// 发送评论
 var sendComment = new Vue({
     el: "#send_comment",
     data: {
@@ -75,7 +76,7 @@ var sendComment = new Vue({
                 var name = document.getElementById("comment_name").value;
                 var email = document.getElementById("comment_email").value;
                 var content = document.getElementById("comment_content").value;
-
+                // 添加评论
                 axios({
                     method: "get",
                     url: "/addComment?bid=" + bid + "&parent=" + reply + "&userName=" + name + "&email=" + email + "&content=" + content + "&reply_name=" + reply_name,
@@ -105,6 +106,7 @@ var sendComment = new Vue({
     }
 });
 
+// 博客评论
 var blogComments = new Vue({
     el: "#blog_comments",
     data: {

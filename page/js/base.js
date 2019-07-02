@@ -1,3 +1,4 @@
+// 随即标签云
 var random_tags = new Vue({
     el: '#random_tags',
     data: {
@@ -19,6 +20,7 @@ var random_tags = new Vue({
         }
     },
     created: function () {
+        // 获取随机标签
         axios({
             method: "get",
             url: "/queryRandomTags"
@@ -33,7 +35,7 @@ var random_tags = new Vue({
         });
     }
 });
-
+// 最新热点
 var newHot = new Vue({
     el: '#new_hot',
     data: {
@@ -55,6 +57,7 @@ var newHot = new Vue({
     }
 });
 
+// 最新评论
 var newComments = new Vue({
     el: '#new_comments',
     data: {
