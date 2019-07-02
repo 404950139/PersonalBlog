@@ -3,6 +3,7 @@ var fs = require("fs");
 var globalConfig = require("./config");
 
 var controllerSet = [];
+
 console.log(globalConfig["web_path"]);
 
 var pathMap = new Map();
