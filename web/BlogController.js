@@ -8,6 +8,7 @@ var url = require("url");
 
 var path = new Map();
 
+// 修改博客
 function editBlog(request, response) {
     request.on("data", function(data) {
         var qsData = qs.parse(data.toString());
@@ -31,20 +32,15 @@ function editBlog(request, response) {
 function queryBlogById(request, response) {
     var params = url.parse(request.url, true).query;
     insertBlog.queryBlogById(parseInt(params.bid), function (result) {
-        response.writeHead(200);
-        response.write(writeResult.writeResult("success", "查询成功", result));
-        response.end();
-        addViews(params.bid);
+        // 增加浏览次数
+        insertBlog.addViews(params.bid, res => {
+            response.writeHead(200);
+            response.write(writeResult.writeResult("success", "查询成功", result));
+            response.end();
+        });
     })
 };
 
-function addViews(request, response) {
-    insertBlog.addViews(id, function (result) {
-        response.writeHead(200);
-        response.write(writeResult.writeResult("success", "查询成功", result));
-        response.end();
-    });
-}
 
 function queryBlogByPage(request, response) {
     // true 解析成对象的形式
