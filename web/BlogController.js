@@ -38,7 +38,7 @@ function queryBlogById(request, response) {
     })
 };
 
-function addViews(id) {
+function addViews(request, response) {
     insertBlog.addViews(id, function (result) {
         response.writeHead(200);
         response.write(writeResult.writeResult("success", "查询成功", result));
