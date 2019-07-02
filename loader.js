@@ -6,7 +6,7 @@ var controllerSet = [];
 
 var pathMap = new Map();
 
-var files = fs.readdirSync("./web");
+var files = fs.readdirSync(globalConfig["web_path"]);
 
 for (var i = 0 ; i < files.length ; i ++) {
     var temp = require("./" + globalConfig["web_path"] + "/" + files[i]);
