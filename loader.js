@@ -1,7 +1,6 @@
 var fs = require("fs");
 
 var globalConfig = require("./config.js");
-console.log(globalConfig);
 
 var controllerSet = [];
 
